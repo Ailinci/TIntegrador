@@ -1,0 +1,5 @@
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `IngresoLogin`(IN `Usu` VARCHAR(255), IN `Pass` VARCHAR(255))
+BEGIN
+    SELECT * FROM usuario WHERE NombreUsu = Usu AND PassUsu = Pass;
+END
