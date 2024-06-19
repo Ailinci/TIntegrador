@@ -20,8 +20,8 @@ namespace pruebaTp
         {
             this.basedatos = "baseclub";
             this.servidor = "localhost";
-            this.usuario = "Ingrese su usuario";
-            this.contrasena = "Ingrese su contraseña";
+            this.usuario = "root";
+            this.contrasena = "Root13";
         }
 
         public MySqlConnection Conectar()

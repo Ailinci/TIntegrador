@@ -2,6 +2,8 @@ using conexion;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using System.Data;
+using TIntegrador;
+
 namespace pruebaTp
 {
     public partial class Form1 : Form
@@ -21,8 +23,12 @@ namespace pruebaTp
 
             if (dataTable.Rows.Count > 0)
             {
-                MessageBox.Show("Ingreso exitoso");
-
+                // Crear y empezar un nuevo subproceso para abrir Form2
+                Thread thread = new Thread(() =>
+                {
+                    Application.Run(new Form2()); // Asegúrate de que Form2 esté definido en tu proyecto
+                });
+                thread.Start();
             }
             else
             {
