@@ -30,13 +30,14 @@
         {
             btnInscribir = new Button();
             btnVolver = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnInscribir
             // 
             btnInscribir.Cursor = Cursors.Hand;
             btnInscribir.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInscribir.Location = new Point(81, 77);
+            btnInscribir.Location = new Point(120, 174);
             btnInscribir.Name = "btnInscribir";
             btnInscribir.Size = new Size(131, 77);
             btnInscribir.TabIndex = 0;
@@ -57,12 +58,24 @@
             btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += button2_Click;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(470, 174);
+            button1.Name = "button1";
+            button1.Size = new Size(132, 77);
+            button1.TabIndex = 2;
+            button1.Text = "Asignar curso";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(btnVolver);
             Controls.Add(btnInscribir);
             Name = "Form2";
@@ -74,5 +87,6 @@
 
         private Button btnInscribir;
         private Button btnVolver;
+        private Button button1;
     }
 }

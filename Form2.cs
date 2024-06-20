@@ -1,4 +1,6 @@
-﻿using pruebaTp;
+﻿using MySqlX.XDevAPI.Relational;
+using pruebaTp;
+using TIntegrador.Datos;
 
 namespace TIntegrador
 {
@@ -8,6 +10,8 @@ namespace TIntegrador
         {
             InitializeComponent();
         }
+        internal string? rol;
+        internal string? usuario;
 
         private void button1_Click(object sender, EventArgs e)
 
@@ -23,6 +27,18 @@ namespace TIntegrador
             Form principal = new Form1();
             principal.Show();
             this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form asignar = new frmAsignar();
+            asignar.Show();
+            this.Hide();
+        }
+
+        private void lblIngreso_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
