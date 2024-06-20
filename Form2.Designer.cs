@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnInscribir = new Button();
             btnVolver = new Button();
             SuspendLayout();
             // 
-            // button1
+            // btnInscribir
             // 
-            button1.Location = new Point(138, 80);
-            button1.Name = "button1";
-            button1.Size = new Size(103, 47);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnInscribir.Location = new Point(81, 77);
+            btnInscribir.Name = "btnInscribir";
+            btnInscribir.Size = new Size(120, 70);
+            btnInscribir.TabIndex = 0;
+            btnInscribir.Text = "Inscribir";
+            btnInscribir.UseVisualStyleBackColor = true;
+            btnInscribir.Click += button1_Click;
             // 
             // btnVolver
             // 
@@ -58,7 +58,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnVolver);
-            Controls.Add(button1);
+            Controls.Add(btnInscribir);
             Name = "Form2";
             Text = "Form2";
             ResumeLayout(false);
@@ -66,7 +66,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnInscribir;
         private Button btnVolver;
     }
 }

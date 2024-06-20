@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
-namespace pruebaTp
+namespace TIntegrador.Datos
 {
     internal class Conexion
     {
@@ -18,10 +12,10 @@ namespace pruebaTp
 
         private Conexion()
         {
-            this.basedatos = "baseclub";
-            this.servidor = "localhost";
-            this.usuario = "root";
-            this.contrasena = "Root13";
+            basedatos = "baseclub";
+            servidor = "localhost";
+            usuario = "root";
+            contrasena = "contraseña";
         }
 
         public MySqlConnection Conectar()
@@ -29,7 +23,7 @@ namespace pruebaTp
             MySqlConnection? cadena = new MySqlConnection();
             try
             {
-                cadena.ConnectionString = $"server={this.servidor}; database={this.basedatos}; Uid={this.usuario}; pwd={this.contrasena}";
+                cadena.ConnectionString = $"server={servidor}; database={basedatos}; Uid={usuario}; pwd={contrasena}";
                 cadena.Open();
                 return cadena;
             }

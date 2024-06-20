@@ -1,7 +1,5 @@
-using conexion;
-using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
 using System.Data;
+using TIntegrador.Datos;
 using TIntegrador;
 
 namespace pruebaTp
@@ -24,11 +22,10 @@ namespace pruebaTp
             if (dataTable.Rows.Count > 0)
             {
                 // Crear y empezar un nuevo subproceso para abrir Form2
-                Thread thread = new Thread(() =>
-                {
-                    Application.Run(new Form2()); // Asegúrate de que Form2 esté definido en tu proyecto
-                });
-                thread.Start();
+                Form principal = new Form2();
+                principal.Show();
+                this.Hide();
+
             }
             else
             {
@@ -36,5 +33,9 @@ namespace pruebaTp
             }
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
