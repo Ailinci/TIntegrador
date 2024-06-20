@@ -19,18 +19,7 @@ namespace TIntegrador
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
-        }
-        /* ===================================================
-        * Limpiamos los objetos para un nuevo ingreso
-        * ================================================ */
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtDocumento.Text = "";
-            cboTipo.Text = "";
-            txtNombre.Focus();
+
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -60,10 +49,9 @@ namespace TIntegrador
                 Datos.Postulantes postulantes = new Datos.Postulantes();
                 respuesta = postulantes.Nuevo_Postu(postu);
                 bool esnumero = int.TryParse(respuesta, out int codigo);
-                MessageBox.Show("respuesta", respuesta);
+
                 if (esnumero)
                 {
-                    MessageBox.Show("entro a la validación es numero");
                     if (codigo == 1)
                     {
                         MessageBox.Show("POSTULANTE YA EXISTE", "AVISO DEL SISTEMA",
@@ -78,6 +66,32 @@ namespace TIntegrador
                     }
                 }
             }
+
+        }
+        /* ===================================================
+         Limpiamos los objetos para un nuevo ingreso
+        * ================================================ */
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtDocumento.Text = "";
+            cboTipo.Text = "";
+            txtNombre.Focus();
+
+        }
+
+        private void btnVolver_Click_2(object sender, EventArgs e)
+        {
+            Form form2 = new Form2();
+            form2.Show();
+            this.Close();
+
+        }
+
+        private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

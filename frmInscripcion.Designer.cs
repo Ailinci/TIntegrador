@@ -34,53 +34,67 @@
             txtNombre = new TextBox();
             txtApellido = new TextBox();
             label3 = new Label();
-            cboTipo = new TextBox();
             lblTipoD = new Label();
-            txtDocumento = new TextBox();
             lblDocumento = new Label();
+            btnLimpiar = new Button();
+            btnVolver = new Button();
+            cboTipo = new ComboBox();
+            txtDocumento = new TextBox();
             SuspendLayout();
             // 
             // btnPostular
             // 
-            btnPostular.Location = new Point(202, 330);
+            btnPostular.BackColor = Color.DarkSeaGreen;
+            btnPostular.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPostular.Location = new Point(449, 385);
             btnPostular.Name = "btnPostular";
-            btnPostular.Size = new Size(156, 44);
+            btnPostular.Size = new Size(163, 53);
             btnPostular.TabIndex = 0;
-            btnPostular.Text = "button1";
-            btnPostular.UseVisualStyleBackColor = true;
+            btnPostular.Text = "Guardar";
+            btnPostular.UseVisualStyleBackColor = false;
             btnPostular.Click += btnPostular_Click;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(106, 79);
+            lblName.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblName.ForeColor = SystemColors.ButtonFace;
+            lblName.Location = new Point(149, 82);
             lblName.Name = "lblName";
-            lblName.Size = new Size(51, 15);
+            lblName.Size = new Size(78, 18);
             lblName.TabIndex = 1;
             lblName.Text = "Nombre";
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(106, 129);
+            lblApellido.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblApellido.ForeColor = SystemColors.ButtonFace;
+            lblApellido.Location = new Point(149, 168);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(51, 15);
+            lblApellido.Size = new Size(72, 18);
             lblApellido.TabIndex = 2;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(184, 79);
+            txtNombre.BackColor = Color.LightSteelBlue;
+            txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(233, 82);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 23);
+            txtNombre.Size = new Size(225, 27);
             txtNombre.TabIndex = 3;
             txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(184, 126);
+            txtApellido.BackColor = Color.LightSteelBlue;
+            txtApellido.BorderStyle = BorderStyle.FixedSingle;
+            txtApellido.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellido.Location = new Point(233, 166);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(100, 23);
+            txtApellido.Size = new Size(225, 27);
             txtApellido.TabIndex = 4;
             // 
             // label3
@@ -90,47 +104,86 @@
             label3.Size = new Size(100, 23);
             label3.TabIndex = 9;
             // 
-            // cboTipo
-            // 
-            cboTipo.Location = new Point(184, 181);
-            cboTipo.Name = "cboTipo";
-            cboTipo.Size = new Size(100, 23);
-            cboTipo.TabIndex = 6;
-            // 
             // lblTipoD
             // 
             lblTipoD.AutoSize = true;
-            lblTipoD.Location = new Point(106, 184);
+            lblTipoD.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTipoD.ForeColor = SystemColors.ButtonFace;
+            lblTipoD.Location = new Point(58, 246);
             lblTipoD.Name = "lblTipoD";
-            lblTipoD.Size = new Size(38, 15);
+            lblTipoD.Size = new Size(163, 18);
             lblTipoD.TabIndex = 7;
-            lblTipoD.Text = "label4";
-            // 
-            // txtDocumento
-            // 
-            txtDocumento.Location = new Point(184, 234);
-            txtDocumento.Name = "txtDocumento";
-            txtDocumento.Size = new Size(100, 23);
-            txtDocumento.TabIndex = 8;
+            lblTipoD.Text = "Tipo de documento";
             // 
             // lblDocumento
             // 
             lblDocumento.AutoSize = true;
-            lblDocumento.Location = new Point(106, 242);
+            lblDocumento.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDocumento.ForeColor = SystemColors.ButtonFace;
+            lblDocumento.Location = new Point(120, 314);
             lblDocumento.Name = "lblDocumento";
-            lblDocumento.Size = new Size(38, 15);
+            lblDocumento.Size = new Size(101, 18);
             lblDocumento.TabIndex = 10;
-            lblDocumento.Text = "label5";
+            lblDocumento.Text = "Documento";
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.LightSteelBlue;
+            btnLimpiar.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiar.Location = new Point(217, 385);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(119, 33);
+            btnLimpiar.TabIndex = 11;
+            btnLimpiar.Text = "Limpiar campos";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click_1;
+            // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = Color.LightSteelBlue;
+            btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.Location = new Point(634, 385);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(145, 53);
+            btnVolver.TabIndex = 13;
+            btnVolver.Text = "VOLVER";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click_2;
+            // 
+            // cboTipo
+            // 
+            cboTipo.BackColor = Color.LightSteelBlue;
+            cboTipo.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cboTipo.FormattingEnabled = true;
+            cboTipo.Items.AddRange(new object[] { "DNI", "PASAPORTE", "CUIL", "LIBRETA" });
+            cboTipo.Location = new Point(233, 243);
+            cboTipo.Name = "cboTipo";
+            cboTipo.Size = new Size(225, 26);
+            cboTipo.TabIndex = 14;
+            cboTipo.SelectedIndexChanged += cboTipo_SelectedIndexChanged;
+            // 
+            // txtDocumento
+            // 
+            txtDocumento.BackColor = Color.LightSteelBlue;
+            txtDocumento.BorderStyle = BorderStyle.FixedSingle;
+            txtDocumento.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDocumento.Location = new Point(233, 314);
+            txtDocumento.Name = "txtDocumento";
+            txtDocumento.Size = new Size(225, 27);
+            txtDocumento.TabIndex = 8;
             // 
             // frmInscripcion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
+            Controls.Add(cboTipo);
+            Controls.Add(btnVolver);
+            Controls.Add(btnLimpiar);
             Controls.Add(lblDocumento);
             Controls.Add(txtDocumento);
             Controls.Add(lblTipoD);
-            Controls.Add(cboTipo);
             Controls.Add(label3);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
@@ -151,10 +204,12 @@
         private TextBox txtNombre;
         private TextBox txtApellido;
         private Label label3;
-        private TextBox cboTipo;
         private Label lblTipoD;
-        private TextBox txtDocumento;
         private Label lblDocumento;
         private Button btnPostular;
+        private Button btnLimpiar;
+        private Button btnVolver;
+        private ComboBox cboTipo;
+        private TextBox txtDocumento;
     }
 }

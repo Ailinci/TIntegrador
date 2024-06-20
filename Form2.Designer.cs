@@ -34,28 +34,32 @@
             // 
             // btnInscribir
             // 
+            btnInscribir.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnInscribir.Location = new Point(81, 77);
             btnInscribir.Name = "btnInscribir";
-            btnInscribir.Size = new Size(120, 70);
+            btnInscribir.Size = new Size(131, 77);
             btnInscribir.TabIndex = 0;
-            btnInscribir.Text = "Inscribir";
+            btnInscribir.Text = "Inscribir postulante";
             btnInscribir.UseVisualStyleBackColor = true;
             btnInscribir.Click += button1_Click;
             // 
             // btnVolver
             // 
+            btnVolver.BackColor = Color.LightSteelBlue;
+            btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.Location = new Point(643, 385);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(145, 53);
             btnVolver.TabIndex = 1;
             btnVolver.Text = "VOLVER";
-            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += button2_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
             Controls.Add(btnVolver);
             Controls.Add(btnInscribir);
