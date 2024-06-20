@@ -41,6 +41,7 @@
             // button1
             // 
             button1.BackColor = Color.LightSteelBlue;
+            button1.Cursor = Cursors.Hand;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.Location = new Point(376, 253);
@@ -54,6 +55,7 @@
             // textBox1
             // 
             textBox1.BackColor = Color.LightSteelBlue;
+            textBox1.Cursor = Cursors.Hand;
             textBox1.Location = new Point(456, 119);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(136, 23);
@@ -63,6 +65,7 @@
             // textBox2
             // 
             textBox2.BackColor = Color.LightSteelBlue;
+            textBox2.Cursor = Cursors.Hand;
             textBox2.Location = new Point(456, 172);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
@@ -96,7 +99,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = TIntegrador.Properties.Resources.png_transparent_man_avatar_user_business_avatar_icon;
+            pictureBox1.Image = TIntegrador.Properties.Resources.blob_removebg_preview;
             pictureBox1.Location = new Point(92, 98);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(160, 152);

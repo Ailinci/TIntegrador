@@ -40,11 +40,14 @@
             btnVolver = new Button();
             cboTipo = new ComboBox();
             txtDocumento = new TextBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnPostular
             // 
             btnPostular.BackColor = Color.DarkSeaGreen;
+            btnPostular.Cursor = Cursors.Hand;
             btnPostular.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnPostular.Location = new Point(449, 385);
             btnPostular.Name = "btnPostular";
@@ -80,6 +83,7 @@
             // 
             txtNombre.BackColor = Color.LightSteelBlue;
             txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Cursor = Cursors.Hand;
             txtNombre.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtNombre.Location = new Point(233, 82);
             txtNombre.Name = "txtNombre";
@@ -91,6 +95,7 @@
             // 
             txtApellido.BackColor = Color.LightSteelBlue;
             txtApellido.BorderStyle = BorderStyle.FixedSingle;
+            txtApellido.Cursor = Cursors.Hand;
             txtApellido.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtApellido.Location = new Point(233, 166);
             txtApellido.Name = "txtApellido";
@@ -129,6 +134,7 @@
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.LightSteelBlue;
+            btnLimpiar.Cursor = Cursors.Hand;
             btnLimpiar.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnLimpiar.Location = new Point(217, 385);
             btnLimpiar.Name = "btnLimpiar";
@@ -141,6 +147,7 @@
             // btnVolver
             // 
             btnVolver.BackColor = Color.LightSteelBlue;
+            btnVolver.Cursor = Cursors.Hand;
             btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.Location = new Point(634, 385);
             btnVolver.Name = "btnVolver";
@@ -153,6 +160,7 @@
             // cboTipo
             // 
             cboTipo.BackColor = Color.LightSteelBlue;
+            cboTipo.Cursor = Cursors.Hand;
             cboTipo.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cboTipo.FormattingEnabled = true;
             cboTipo.Items.AddRange(new object[] { "DNI", "PASAPORTE", "CUIL", "LIBRETA" });
@@ -166,11 +174,23 @@
             // 
             txtDocumento.BackColor = Color.LightSteelBlue;
             txtDocumento.BorderStyle = BorderStyle.FixedSingle;
+            txtDocumento.Cursor = Cursors.Hand;
             txtDocumento.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtDocumento.Location = new Point(233, 314);
             txtDocumento.Name = "txtDocumento";
             txtDocumento.Size = new Size(225, 27);
             txtDocumento.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.blob_removebg_preview;
+            pictureBox1.Location = new Point(543, 110);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(209, 196);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // frmInscripcion
             // 
@@ -178,6 +198,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(cboTipo);
             Controls.Add(btnVolver);
             Controls.Add(btnLimpiar);
@@ -192,6 +213,7 @@
             Controls.Add(btnPostular);
             Name = "frmInscripcion";
             Text = "Form3";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -211,5 +233,6 @@
         private Button btnVolver;
         private ComboBox cboTipo;
         private TextBox txtDocumento;
+        private PictureBox pictureBox1;
     }
 }

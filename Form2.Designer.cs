@@ -34,6 +34,7 @@
             // 
             // btnInscribir
             // 
+            btnInscribir.Cursor = Cursors.Hand;
             btnInscribir.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnInscribir.Location = new Point(81, 77);
             btnInscribir.Name = "btnInscribir";
@@ -46,6 +47,7 @@
             // btnVolver
             // 
             btnVolver.BackColor = Color.LightSteelBlue;
+            btnVolver.Cursor = Cursors.Hand;
             btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.Location = new Point(643, 385);
             btnVolver.Name = "btnVolver";

@@ -63,6 +63,26 @@ namespace TIntegrador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blob_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("blob-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blob_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("blob-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_transparent_man_avatar_user_business_avatar_icon {
             get {
                 object obj = ResourceManager.GetObject("png-transparent-man-avatar-user-business-avatar-icon", resourceCulture);
