@@ -31,13 +31,14 @@
             btnInscribir = new Button();
             btnVolver = new Button();
             button1 = new Button();
+            btnListarSocios = new Button();
             SuspendLayout();
             // 
             // btnInscribir
             // 
             btnInscribir.Cursor = Cursors.Hand;
             btnInscribir.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInscribir.Location = new Point(120, 174);
+            btnInscribir.Location = new Point(114, 90);
             btnInscribir.Name = "btnInscribir";
             btnInscribir.Size = new Size(131, 77);
             btnInscribir.TabIndex = 0;
@@ -61,7 +62,7 @@
             // button1
             // 
             button1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(470, 174);
+            button1.Location = new Point(643, 41);
             button1.Name = "button1";
             button1.Size = new Size(132, 77);
             button1.TabIndex = 2;
@@ -69,17 +70,30 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
+            // btnListarSocios
+            // 
+            btnListarSocios.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnListarSocios.Location = new Point(114, 220);
+            btnListarSocios.Name = "btnListarSocios";
+            btnListarSocios.Size = new Size(132, 77);
+            btnListarSocios.TabIndex = 3;
+            btnListarSocios.Text = "btnListarSocios";
+            btnListarSocios.UseVisualStyleBackColor = true;
+            btnListarSocios.Click += btnListarSocios_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnListarSocios);
             Controls.Add(button1);
             Controls.Add(btnVolver);
             Controls.Add(btnInscribir);
             Name = "Form2";
             Text = "Form2";
+            Load += Form2_Load;
             ResumeLayout(false);
         }
 
@@ -88,5 +102,6 @@
         private Button btnInscribir;
         private Button btnVolver;
         private Button button1;
+        private Button btnListarSocios;
     }
 }

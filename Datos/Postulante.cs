@@ -46,6 +46,59 @@ namespace TIntegrador.Datos
             }
             return salida;
         }
+
+
+        public string BuscarPostulante(E_Postulante postu)
+        {
+            string salida = string.Empty;
+            MySqlConnection sqlCon = new MySqlConnection();
+            try
+            {
+                sqlCon = Conexion.GetInstancia().Conectar();
+                MySqlCommand comando = new MySqlCommand("BuscarPostulante", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = postu.TDocP;
+                comando.Parameters.Add("Doc", MySqlDbType.Int64).Value = postu.DocP; // Assuming BIGINT
+
+                if (sqlCon.State == ConnectionState.Open)
+                {
+                    sqlCon.Close();
+                }
+                sqlCon.Open();
+
+                MySqlDataReader reader = comando.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        // Assuming you want to return the first column value as a string
+                        salida = $"Número de postulante: {reader.GetString("NPostu")}\n" +
+                                 $"Nombre: {reader.GetString("NombreP")}\n" +
+                                 $"Apellido: {reader.GetString("ApellidoP")}\n" +
+                                 $"Tipo de Documento: {reader.GetString("TDocP")}\n" +
+                                 $"Documento: {reader.GetString("DocP")}";
+                    }
+                }
+                else
+                {
+                    salida = "No data found";
+                }
+            }
+            catch (Exception ex)
+            {
+                salida = ex.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                {
+                    sqlCon.Close();
+                }
+            }
+            return salida;
+        }
+
     }
+
 
 }

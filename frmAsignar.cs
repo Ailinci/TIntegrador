@@ -77,12 +77,36 @@ namespace TIntegrador
 
         private void dtgvCurso_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Asegúrate de que el clic sea en una fila válida (no en el encabezado)
+            if (e.RowIndex >= 0)
+            {
+                // Obtener la fila seleccionada
+                DataGridViewRow filaSeleccionada = dtgvCurso.Rows[e.RowIndex];
+
+                // Obtener información del curso de la fila seleccionada
+                string nombreCurso = filaSeleccionada.Cells["NombreCurso"].Value.ToString();
+                string fecha = filaSeleccionada.Cells["Fecha"].Value.ToString();
+                string docente = filaSeleccionada.Cells["Docente"].Value.ToString();
+                string precio = filaSeleccionada.Cells["Precio"].Value.ToString();
+
+                // Aquí puedes implementar la lógica para relacionar el curso con un usuario
+                // Por ejemplo, mostrar un cuadro de diálogo para ingresar el DNI del usuario
+                // y luego realizar la operación necesaria (ejemplo no incluido)
+                MessageBox.Show($"Curso seleccionado: {nombreCurso}\nFecha: {fecha}\nDocente: {docente}\nPrecio: {precio}", "Información del Curso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void dtgvCurso_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-
+            Form atras = new Form2();
+            atras.Show();
+            this.Close();
         }
     }
 }

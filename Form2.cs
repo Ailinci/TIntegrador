@@ -1,5 +1,6 @@
 ﻿using MySqlX.XDevAPI.Relational;
 using pruebaTp;
+using TIntegrador;
 using TIntegrador.Datos;
 
 namespace TIntegrador
@@ -39,6 +40,18 @@ namespace TIntegrador
         private void lblIngreso_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListarSocios_Click(object sender, EventArgs e)
+        {
+            Form listarSocios = new frmListarSocios();
+            listarSocios.Show();
+            this.Close();
         }
     }
 }

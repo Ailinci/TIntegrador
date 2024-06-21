@@ -33,6 +33,7 @@ namespace TIntegrador
             dataGridView1 = new DataGridView();
             conexionBindingSource = new BindingSource(components);
             dtgvCurso = new DataGridView();
+            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgvCurso).BeginInit();
@@ -41,6 +42,7 @@ namespace TIntegrador
             // dataGridView1
             // 
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.BackgroundColor = SystemColors.ActiveCaptionText;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.DataSource = conexionBindingSource;
             dataGridView1.Dock = DockStyle.Fill;
@@ -51,18 +53,35 @@ namespace TIntegrador
             // 
             // dtgvCurso
             // 
+            dtgvCurso.BackgroundColor = SystemColors.ButtonFace;
             dtgvCurso.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvCurso.Location = new Point(12, 12);
             dtgvCurso.Name = "dtgvCurso";
             dtgvCurso.RowTemplate.Height = 25;
-            dtgvCurso.Size = new Size(920, 344);
+            dtgvCurso.Size = new Size(920, 300);
             dtgvCurso.TabIndex = 1;
+            dtgvCurso.CellContentClick += dtgvCurso_CellContentClick_1;
+            dtgvCurso.CellContentDoubleClick += dtgvCurso_CellContentClick;
+            // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = Color.LightSteelBlue;
+            btnVolver.Cursor = Cursors.Hand;
+            btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.Location = new Point(787, 431);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(145, 53);
+            btnVolver.TabIndex = 2;
+            btnVolver.Text = "VOLVER";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // frmAsignar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(944, 496);
+            Controls.Add(btnVolver);
             Controls.Add(dtgvCurso);
             Controls.Add(dataGridView1);
             Name = "frmAsignar";
@@ -79,5 +98,6 @@ namespace TIntegrador
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource conexionBindingSource;
         private System.Windows.Forms.DataGridView dtgvCurso;
+        private Button btnVolver;
     }
 }
