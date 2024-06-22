@@ -18,7 +18,8 @@ namespace TIntegrador
                 dtgvSocios.Columns.Add("TDocP", "Tipo Doc");
                 dtgvSocios.Columns.Add("DocP", "Documento");
                 dtgvSocios.Columns.Add("Legajo", "Legajo");
-
+                dtgvSocios.Columns.Add("UltimoPagoFecha", "Ultimo Pago Fecha");
+                dtgvSocios.Columns.Add("UltimoPagoMonto", "Ultimo Pago Monto");
             }
             CargarSocios();
         }
@@ -30,13 +31,15 @@ namespace TIntegrador
             {
                 string query;
                 sqlCon = Conexion.GetInstancia().Conectar();
-                query = "SELECT p.NPostu, p.NombreP, p.ApellidoP, p.TDocP, p.DocP, " +
-               "a.Legajo " +
-               "FROM postulante p " +
-               "INNER JOIN alumno a ON p.NPostu = a.NPostu " +
-               "ORDER BY p.NPostu;";
-
-                MessageBox.Show("Query: " + query); // Añadir esto para depuración
+                query = "SELECT p.NPostu, p.NombreP, p.ApellidoP, p.TDocP, p.DocP, a.Legajo, " +
+                        "COALESCE(MAX(pg.fecha), 'No hay pagos') AS UltimoPagoFecha, " +
+                        "COALESCE(MAX(pg.monto), 0) AS UltimoPagoMonto " +
+                        "FROM postulante p " +
+                        "INNER JOIN alumno a ON p.NPostu = a.NPostu " +
+                        "LEFT JOIN inscripcion i ON a.Legajo = i.Legajo " +
+                        "LEFT JOIN pago pg ON i.idInscri = pg.idInscri " +
+                        "GROUP BY p.NPostu, p.NombreP, p.ApellidoP, p.TDocP, p.DocP, a.Legajo " +
+                        "ORDER BY p.NPostu;";
 
                 MySqlCommand comando = new MySqlCommand(query, sqlCon);
                 comando.CommandType = CommandType.Text;
@@ -51,12 +54,38 @@ namespace TIntegrador
                     while (reader.Read())
                     {
                         int reglon = dtgvSocios.Rows.Add();
-                        dtgvSocios.Rows[reglon].Cells["Npostu"].Value = reader.GetDecimal(0);
-                        dtgvSocios.Rows[reglon].Cells["NombreP"].Value = reader.GetString(1);
-                        dtgvSocios.Rows[reglon].Cells["ApellidoP"].Value = reader.GetString(2);
-                        dtgvSocios.Rows[reglon].Cells["TDocP"].Value = reader.GetString(3);
-                        dtgvSocios.Rows[reglon].Cells["DocP"].Value = reader.GetString(4);
-                        dtgvSocios.Rows[reglon].Cells["Legajo"].Value = reader.GetDecimal(5);
+                        dtgvSocios.Rows[reglon].Cells["Npostu"].Value = Convert.ToString(reader["NPostu"]);
+                        dtgvSocios.Rows[reglon].Cells["NombreP"].Value = Convert.ToString(reader["NombreP"]);
+                        dtgvSocios.Rows[reglon].Cells["ApellidoP"].Value = Convert.ToString(reader["ApellidoP"]);
+                        dtgvSocios.Rows[reglon].Cells["TDocP"].Value = Convert.ToString(reader["TDocP"]);
+                        dtgvSocios.Rows[reglon].Cells["DocP"].Value = Convert.ToString(reader["DocP"]);
+                        dtgvSocios.Rows[reglon].Cells["Legajo"].Value = Convert.ToString(reader["Legajo"]);
+
+                        // Leer y asignar la fecha del último pago
+                        object ultimoPagoFecha = reader["UltimoPagoFecha"];
+                        if (ultimoPagoFecha is DateTime)
+                        {
+                            dtgvSocios.Rows[reglon].Cells["UltimoPagoFecha"].Value = ((DateTime)ultimoPagoFecha).ToShortDateString();
+                        }
+                        else if (ultimoPagoFecha is string)
+                        {
+                            dtgvSocios.Rows[reglon].Cells["UltimoPagoFecha"].Value = (string)ultimoPagoFecha;
+                        }
+                        else
+                        {
+                            dtgvSocios.Rows[reglon].Cells["UltimoPagoFecha"].Value = "No hay pagos";
+                        }
+
+                        // Leer y asignar el monto del último pago
+                        object ultimoPagoMonto = reader["UltimoPagoMonto"];
+                        if (ultimoPagoMonto == DBNull.Value)
+                        {
+                            dtgvSocios.Rows[reglon].Cells["UltimoPagoMonto"].Value = "0";
+                        }
+                        else
+                        {
+                            dtgvSocios.Rows[reglon].Cells["UltimoPagoMonto"].Value = Convert.ToDecimal(ultimoPagoMonto).ToString();
+                        }
                     }
                 }
                 else
@@ -74,5 +103,13 @@ namespace TIntegrador
             }
         }
 
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Form principal = new Form2();
+            principal.Show();
+            this.Close();
+        }
     }
+
 }

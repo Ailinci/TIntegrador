@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             dtgvSocios = new DataGridView();
+            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
             SuspendLayout();
             // 
@@ -42,11 +43,25 @@
             dtgvSocios.Size = new Size(786, 273);
             dtgvSocios.TabIndex = 2;
             // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = Color.LightSteelBlue;
+            btnVolver.Cursor = Cursors.Hand;
+            btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.Location = new Point(643, 385);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(145, 53);
+            btnVolver.TabIndex = 14;
+            btnVolver.Text = "VOLVER";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
+            // 
             // frmListarSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnVolver);
             Controls.Add(dtgvSocios);
             Name = "frmListarSocios";
             Text = "frmListarSocios";
@@ -57,5 +72,6 @@
         #endregion
 
         private DataGridView dtgvSocios;
+        private Button btnVolver;
     }
 }

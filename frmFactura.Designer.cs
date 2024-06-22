@@ -40,31 +40,30 @@
             // 
             // btnImprimir
             // 
-            btnImprimir.Location = new Point(336, 268);
+            btnImprimir.Location = new Point(193, 333);
             btnImprimir.Name = "btnImprimir";
-            btnImprimir.Size = new Size(75, 23);
+            btnImprimir.Size = new Size(133, 36);
             btnImprimir.TabIndex = 0;
-            btnImprimir.Text = "btnImprimir";
+            btnImprimir.Text = "Generar ticket";
             btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += btnImprimir_Click;
             // 
             // lblAlumno
             // 
             lblAlumno.AutoSize = true;
-            lblAlumno.Location = new Point(193, 102);
+            lblAlumno.Location = new Point(193, 136);
             lblAlumno.Name = "lblAlumno";
             lblAlumno.Size = new Size(63, 15);
             lblAlumno.TabIndex = 1;
             lblAlumno.Text = "lblAlumno";
-            lblAlumno.Click += lblAlumno_Click;
             // 
             // lblCurso
             // 
             lblCurso.AutoSize = true;
             lblCurso.Location = new Point(193, 136);
             lblCurso.Name = "lblCurso";
-            lblCurso.Size = new Size(51, 15);
+            lblCurso.Size = new Size(0, 15);
             lblCurso.TabIndex = 2;
-            lblCurso.Text = "lblCurso";
             // 
             // lblDia
             // 
@@ -96,7 +95,7 @@
             // lblDfecha
             // 
             lblDfecha.AutoSize = true;
-            lblDfecha.Location = new Point(201, 268);
+            lblDfecha.Location = new Point(193, 268);
             lblDfecha.Name = "lblDfecha";
             lblDfecha.Size = new Size(57, 15);
             lblDfecha.TabIndex = 6;
@@ -108,7 +107,7 @@
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(75, 23);
             btnVolver.TabIndex = 7;
-            btnVolver.Text = "button1";
+            btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
@@ -127,7 +126,6 @@
             Controls.Add(btnImprimir);
             Name = "frmFactura";
             Text = "frmFactura";
-            Load += frmFactura_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,12 +133,12 @@
         #endregion
 
         private Button btnImprimir;
-        private Label lblAlumno;
         private Label lblCurso;
         private Label lblDia;
         private Label lblValor;
         private Label lblFPago;
         private Label lblDfecha;
         private Button btnVolver;
+        public Label lblAlumno;
     }
 }

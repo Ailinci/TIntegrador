@@ -9,4 +9,6 @@ namespace TIntegrador.Entidades
         public string? TDocP { get; set; }
         public int DocP { get; set; }
     }
+
+
 }

@@ -60,7 +60,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(136, 23);
             textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -119,7 +118,6 @@
             label3.Size = new Size(225, 18);
             label3.TabIndex = 6;
             label3.Text = "Ingrese sus credenciales";
-            label3.Click += label3_Click;
             // 
             // Form1
             // 

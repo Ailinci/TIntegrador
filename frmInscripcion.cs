@@ -119,26 +119,34 @@ namespace TIntegrador
 
                 Datos.Socio socios = new Datos.Socio();
                 string respuesta = socios.Nuevo_Socio(socio);
-                bool esnumero = int.TryParse(respuesta, out int codigo);
 
-                MessageBox.Show("entra a crear", "AVISO DEL SISTEMA");
-                MessageBox.Show(respuesta, "AVISO DEL SISTEMA");
-
-                if (esnumero)
+                // Validar la respuesta del método Nuevo_Socio
+                if (respuesta.StartsWith("Alumno creado correctamente. Legajo: "))
                 {
-                    if (codigo == 1)
-                    {
-                        MessageBox.Show("ALUMNO YA EXISTE", "AVISO DEL SISTEMA",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se convirtió en socio con éxito con el código Nro " + respuesta,
-                            "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                    }
+                    // Extraer el número de legajo del mensaje
+                    string legajoStr = respuesta.Substring(respuesta.IndexOf(": ") + 2);
+                    int legajo = int.Parse(legajoStr);
+
+                    MessageBox.Show("Se convirtió en socio con éxito con el código Nro " + legajo,
+                        "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                    Form pagar = new frmPagar(legajo, socio.TDocP, socio.DocP);
+                    pagar.Show();
+                    this.Close();
+                }
+                else if (respuesta.StartsWith("Error: "))
+                {
+                    MessageBox.Show("Error al crear el alumno: " + respuesta,
+                        "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(respuesta, "AVISO DEL SISTEMA",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         private void btnBuscarPos_Click(object sender, EventArgs e)
         {
@@ -171,12 +179,6 @@ namespace TIntegrador
                 else if (respuesta.Contains("Error"))
                 {
                     MessageBox.Show("Ocurrió un error: " + respuesta, "ERROR DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    Form pagar = new frmPagar();
-                    pagar.Show();
-                    this.Close();
                 }
         }
     }

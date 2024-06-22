@@ -1,23 +1,16 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TIntegrador.Datos;
+﻿
+using TIntegrador.Entidades;
 
 namespace TIntegrador
 {
     public partial class frmPagar : Form
     {
-        public frmFactura doc = new frmFactura();
-        public frmPagar()
+        public frmPagar(int legajo, string TDocP, int DocP)
         {
             InitializeComponent();
+            txtNro.Text = legajo.ToString();
+            cboTipo.Text = TDocP;
+            txtDocumento.Text = DocP.ToString();
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -27,74 +20,55 @@ namespace TIntegrador
         }
         private void btnComprobante_Click(object sender, EventArgs e)
         {
-            doc.Show();
-            this.Hide();
         }
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            MySqlConnection sqlCon = new MySqlConnection();
             try
             {
-                string query;
-                sqlCon = Conexion.GetInstancia().Conectar();
-                /*
-                --------------------------------------------------------
-                -------------------------
-                * Consulta simple que proyecta los datos necesarios
-                * para rellenar el documento
-                * En este caso se trata del comprobante de pago del
-                curso
-                *
-                --------------------------------------------------------
-                ------------------------------------ */
-                query = ("select idinscri, nombre, concat(nombrep, '', apellidop), precio,e.fecha " + "from inscripcion i inner join edicion e oni.idEdicion = e.idEdicion" + " inner join curso c on c.ncurso = e.ncurso innerjoin alumno a on a.legajo = i.legajo" + " inner join postulante p on p.NPostu = a.Npostuwhere idinscri = " + txtNro.Text); // <<<------ usamos el dato ingresado por el usuario
-                MySqlCommand comando = new MySqlCommand(query,
-                sqlCon);
-                // usamos la consulta y la conexion.-
-                comando.CommandType = CommandType.Text;
-                sqlCon.Open();
-                MySqlDataReader reader; // El DataReader almacena TODAS las filas.-
-                reader = comando.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Read(); // En este caso sabemos que si tiene datos es UNA SOLA FILA
-                    doc.numero_f = Convert.ToInt32(reader.GetString
-                    (0));
-                    doc.curso_f = reader.GetString(1);
-                    doc.alumno_f = reader.GetString(2);
-                    doc.monto_f = (float)Convert.ToDouble
-                    (reader.GetString(3));
-                    doc.fecha_f = (DateTime)Convert.ToDateTime
-                    (reader.GetString(4));
-                    if (optEfvo.Checked == true) // Evaluamos que opcion es la seleccionada
-                    {
-                        doc.forma_f = "Efectivo";
-                        /* ---------------------------------
-                        * Pago en efvo se descuenta 10%
-                        * --------------------------------- */
-                        doc.monto_f = (float)(doc.monto_f * 0.90);
-                    }
-                    else
-                    {
-                        doc.forma_f = "Tarjeta";
-                    }
-                    btnComprobante.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("Número de inscripcion inexistente", "AVISO DEL SISTEMA",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                E_Socio socio = new E_Socio();
+                socio.DocP = Convert.ToInt32(txtDocumento.Text);
+                socio.TDocP = cboTipo.Text;
+
+                Datos.Socio socios = new Datos.Socio();
+                string respuesta = socios.GenerarIdRegistro(socio);
+
+                MessageBox.Show(respuesta, "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Parse the response to get the necessary values for the ticket
+                var ticketData = ParseTicketData(respuesta);
+
+                // Create an instance of frmFactura and pass the ticket data
+                frmFactura factura = new frmFactura(ticketData);
+                factura.Show();
+                this.Hide();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "MENSAJE DEL CATCH", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+        // Method to parse the ticket data from the response
+        private TicketData ParseTicketData(string response)
+        {
+            var lines = response.Split('\n');
+            return new TicketData
             {
-                if (sqlCon.State == ConnectionState.Open)
-                { sqlCon.Close(); };
-            }
+                Alumno = lines[0].Split(':')[1].Trim(),
+                Curso = "Curso Placeholder", // Adjust this accordingly
+                Fecha = DateTime.Now, // Assuming current date
+                Monto = float.Parse(lines[2].Split(':')[1].Trim()),
+                FormaPago = "Efectivo" 
+            };
+        }
+
+        // Class to hold ticket data
+        public class TicketData
+        {
+            public string Alumno { get; set; }
+            public string Curso { get; set; }
+            public DateTime Fecha { get; set; }
+            public float Monto { get; set; }
+            public string FormaPago { get; set; }
         }
 
         private void btnVolver_Click_1(object sender, EventArgs e)

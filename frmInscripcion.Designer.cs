@@ -199,7 +199,7 @@
             btnHacerSocio.BackColor = Color.DarkSeaGreen;
             btnHacerSocio.Cursor = Cursors.Hand;
             btnHacerSocio.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnHacerSocio.Location = new Point(329, 385);
+            btnHacerSocio.Location = new Point(422, 385);
             btnHacerSocio.Name = "btnHacerSocio";
             btnHacerSocio.Size = new Size(163, 53);
             btnHacerSocio.TabIndex = 16;

@@ -1,6 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using TIntegrador.Entidades;
 
@@ -55,5 +53,107 @@ namespace TIntegrador.Datos
                 return salida;
             }
         
+        public string Buscar_Socio(E_Socio socio)
+        {
+            string salida = string.Empty;
+            MySqlConnection sqlCon = new MySqlConnection();
+            try
+            {
+                sqlCon = Conexion.GetInstancia().Conectar();
+                MySqlCommand comando = new MySqlCommand("BuscarPostulante", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = socio.TDocP;
+                comando.Parameters.Add("Doc", MySqlDbType.Int64).Value = socio.DocP; // Assuming BIGINT
+
+                if (sqlCon.State == ConnectionState.Open)
+                {
+                    sqlCon.Close();
+                }
+                sqlCon.Open();
+
+                MySqlDataReader reader = comando.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        // Assuming you want to return the first column value as a string
+                        salida = $"Número de socio: {reader.GetString("NPostu")}\n" +
+                                 $"Nombre: {reader.GetString("NombreP")}\n" +
+                                 $"Apellido: {reader.GetString("ApellidoP")}\n" +
+                                 $"Tipo de Documento: {reader.GetString("TDocP")}\n" +
+                                 $"Documento: {reader.GetString("DocP")}";
+                    }
+                }
+                else
+                {
+                    salida = "No data found";
+                }
+            }
+            catch (Exception ex)
+            {
+                salida = ex.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                {
+                    sqlCon.Close();
+                }
+            }
+            return salida;
+        }
+
+        public string GenerarIdRegistro(E_Socio socio)
+        {
+            string salida = string.Empty;
+            MySqlConnection sqlCon = new MySqlConnection();
+            try
+            {
+                sqlCon = Conexion.GetInstancia().Conectar();
+                MySqlCommand comando = new MySqlCommand("AgregarInscripcion", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = socio.TDocP;
+                comando.Parameters.Add("Doc", MySqlDbType.Int64).Value = socio.DocP; // Assuming BIGINT
+
+                if (sqlCon.State == ConnectionState.Open)
+                {
+                    sqlCon.Close();
+                }
+                sqlCon.Open();
+
+                MySqlDataReader reader = comando.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        salida = $"ID de la Inscripción: {reader.GetInt32("idInscripcion")}\n" +
+                                 $"ID del Pago: {reader.GetInt32("idPago")}\n" +
+                                 $"Monto del Pago: {reader.GetFloat("montoPago")}\n" +
+                                 $"Fecha del Pago: {reader.GetDateTime("fechaPago").ToString("yyyy-MM-dd")}";
+                    }
+
+                   
+                }
+                else
+                {
+                    salida = "No data found";
+                }
+            }
+            catch (Exception ex)
+            {
+                salida = ex.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                {
+                    sqlCon.Close();
+                }
+            }
+            return salida;
+        }
+
+
+
     }
 }

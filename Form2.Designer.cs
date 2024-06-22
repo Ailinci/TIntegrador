@@ -38,9 +38,9 @@
             // 
             btnInscribir.Cursor = Cursors.Hand;
             btnInscribir.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInscribir.Location = new Point(114, 90);
+            btnInscribir.Location = new Point(46, 74);
             btnInscribir.Name = "btnInscribir";
-            btnInscribir.Size = new Size(131, 77);
+            btnInscribir.Size = new Size(210, 77);
             btnInscribir.TabIndex = 0;
             btnInscribir.Text = "Inscribir postulante";
             btnInscribir.UseVisualStyleBackColor = true;
@@ -62,20 +62,20 @@
             // button1
             // 
             button1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(643, 41);
+            button1.Location = new Point(504, 78);
             button1.Name = "button1";
-            button1.Size = new Size(132, 77);
+            button1.Size = new Size(174, 68);
             button1.TabIndex = 2;
-            button1.Text = "Asignar curso";
+            button1.Text = "Listar y asignar curso";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
             // btnListarSocios
             // 
             btnListarSocios.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnListarSocios.Location = new Point(114, 220);
+            btnListarSocios.Location = new Point(46, 202);
             btnListarSocios.Name = "btnListarSocios";
-            btnListarSocios.Size = new Size(132, 77);
+            btnListarSocios.Size = new Size(210, 77);
             btnListarSocios.TabIndex = 3;
             btnListarSocios.Text = "btnListarSocios";
             btnListarSocios.UseVisualStyleBackColor = true;
@@ -93,7 +93,6 @@
             Controls.Add(btnInscribir);
             Name = "Form2";
             Text = "Form2";
-            Load += Form2_Load;
             ResumeLayout(false);
         }
 
