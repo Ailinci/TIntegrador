@@ -90,8 +90,7 @@
             txtNombre.Location = new Point(182, 41);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(225, 27);
-            txtNombre.TabIndex = 3;
-            txtNombre.TextChanged += txtNombre_TextChanged;
+            txtNombre.TabIndex = 3; 
             // 
             // txtApellido
             // 
@@ -170,7 +169,6 @@
             cboTipo.Name = "cboTipo";
             cboTipo.Size = new Size(225, 26);
             cboTipo.TabIndex = 14;
-            cboTipo.SelectedIndexChanged += cboTipo_SelectedIndexChanged;
             // 
             // txtDocumento
             // 
@@ -192,7 +190,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnHacerSocio
             // 

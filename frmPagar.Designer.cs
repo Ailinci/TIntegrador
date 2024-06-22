@@ -31,7 +31,7 @@
             txtNro = new TextBox();
             btnComprobante = new Button();
             groupBox1 = new GroupBox();
-            radioButton2 = new RadioButton();
+            btnTarjeta = new RadioButton();
             optEfvo = new RadioButton();
             btnVolver = new Button();
             cboTipo = new ComboBox();
@@ -60,7 +60,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton2);
+            groupBox1.Controls.Add(btnTarjeta);
             groupBox1.Controls.Add(optEfvo);
             groupBox1.ForeColor = SystemColors.ButtonHighlight;
             groupBox1.Location = new Point(492, 99);
@@ -70,17 +70,17 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // radioButton2
+            // btnTarjeta
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.ForeColor = SystemColors.ButtonHighlight;
-            radioButton2.Location = new Point(16, 54);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(94, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
+            btnTarjeta.AutoSize = true;
+            btnTarjeta.ForeColor = SystemColors.ButtonHighlight;
+            btnTarjeta.Location = new Point(16, 54);
+            btnTarjeta.Name = "btnTarjeta";
+            btnTarjeta.Size = new Size(94, 19);
+            btnTarjeta.TabIndex = 1;
+            btnTarjeta.TabStop = true;
+            btnTarjeta.Text = "radioButton2";
+            btnTarjeta.UseVisualStyleBackColor = true;
             // 
             // optEfvo
             // 
@@ -195,5 +195,6 @@
         private TextBox txtDocumento;
         private Label lblTipoD;
         private Button btnPagar;
+        private RadioButton btnTarjeta;
     }
 }

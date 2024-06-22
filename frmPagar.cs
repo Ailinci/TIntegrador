@@ -31,13 +31,8 @@ namespace TIntegrador
 
                 Datos.Socio socios = new Datos.Socio();
                 string respuesta = socios.GenerarIdRegistro(socio);
-
-                MessageBox.Show(respuesta, "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Parse the response to get the necessary values for the ticket
                 var ticketData = ParseTicketData(respuesta);
 
-                // Create an instance of frmFactura and pass the ticket data
                 frmFactura factura = new frmFactura(ticketData);
                 factura.Show();
                 this.Hide();
@@ -47,17 +42,17 @@ namespace TIntegrador
                 MessageBox.Show(ex.Message, "MENSAJE DEL CATCH", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        // Method to parse the ticket data from the response
+
         private TicketData ParseTicketData(string response)
         {
             var lines = response.Split('\n');
             return new TicketData
             {
                 Alumno = lines[0].Split(':')[1].Trim(),
-                Curso = "Curso Placeholder", // Adjust this accordingly
-                Fecha = DateTime.Now, // Assuming current date
+                Curso = "Costo por asociación",
+                Fecha = DateTime.Now, 
                 Monto = float.Parse(lines[2].Split(':')[1].Trim()),
-                FormaPago = "Efectivo" 
+                FormaPago = btnTarjeta.Checked ? "Tarjeta" : "Efectivo"
             };
         }
 

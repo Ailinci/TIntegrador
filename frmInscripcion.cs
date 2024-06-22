@@ -17,15 +17,6 @@ namespace TIntegrador
             principal.Show();
             this.Close();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnPostular_Click(object sender, EventArgs e)
         {
@@ -68,12 +59,12 @@ namespace TIntegrador
             }
 
         }
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
         /* ===================================================
          Limpiamos los objetos para un nuevo ingreso
         * ================================================ */
 
-        private void btnLimpiar_Click_1(object sender, EventArgs e)
-        {
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtDocumento.Text = "";
@@ -87,16 +78,6 @@ namespace TIntegrador
             Form form2 = new Form2();
             form2.Show();
             this.Close();
-
-        }
-
-        private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -153,13 +134,11 @@ namespace TIntegrador
 
                 E_Postulante postu = new E_Postulante();
                 postu.TDocP = cboTipo.Text.ToLower();
-                postu.DocP = Convert.ToInt32(txtDocumento.Text); // Use Convert.ToInt64 for BIGINT
+                postu.DocP = Convert.ToInt32(txtDocumento.Text);
 
                 // Instanciamos para usar el metodo dentro de postulantes
                 Datos.Postulantes postulantes = new Datos.Postulantes();
                 string respuesta = postulantes.BuscarPostulante(postu);
-
-                MessageBox.Show("respuesta: " + respuesta); // Añadir esto para depuración
 
                 if (respuesta == "No data found")
                 {
@@ -174,9 +153,11 @@ namespace TIntegrador
                         btnHacerSocio_Click(sender, e);
                     }
      
-          
                 }
-                else if (respuesta.Contains("Error"))
+                else if (!respuesta.Contains("Error")){
+                    MessageBox.Show("Postulante encontrado: " + respuesta, "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
                 {
                     MessageBox.Show("Ocurrió un error: " + respuesta, "ERROR DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

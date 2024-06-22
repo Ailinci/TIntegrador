@@ -15,7 +15,7 @@ namespace TIntegrador.Datos
             basedatos = "baseclub";
             servidor = "localhost";
             usuario = "root";
-            contrasena = "Root13";
+            contrasena = "contraseña";
         }
 
         public MySqlConnection Conectar()
