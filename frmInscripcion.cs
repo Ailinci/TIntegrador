@@ -83,8 +83,13 @@ namespace TIntegrador
 
         private void btnHacerSocio_Click(object sender, EventArgs e)
         {
+            NewMethod();
+        }
+
+        private void NewMethod()
+        {
             if (txtNombre.Text == "" || txtApellido.Text == "" ||
-                txtDocumento.Text == "" || cboTipo.Text == "")
+                            txtDocumento.Text == "" || cboTipo.Text == "")
             {
                 MessageBox.Show("Debe completar todos los campos requeridos (*) ",
                     "AVISO DEL SISTEMA", MessageBoxButtons.OK,
@@ -127,7 +132,6 @@ namespace TIntegrador
                 }
             }
         }
-
 
         private void btnBuscarPos_Click(object sender, EventArgs e)
         {

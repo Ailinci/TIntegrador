@@ -51,11 +51,11 @@
             btnPostular.BackColor = Color.DarkSeaGreen;
             btnPostular.Cursor = Cursors.Hand;
             btnPostular.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPostular.Location = new Point(13, 385);
+            btnPostular.Location = new Point(440, 385);
             btnPostular.Name = "btnPostular";
-            btnPostular.Size = new Size(163, 53);
+            btnPostular.Size = new Size(163, 52);
             btnPostular.TabIndex = 0;
-            btnPostular.Text = "Guardar";
+            btnPostular.Text = "Guardar alumno";
             btnPostular.UseVisualStyleBackColor = false;
             btnPostular.Click += btnPostular_Click;
             // 
@@ -64,7 +64,7 @@
             lblName.AutoSize = true;
             lblName.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblName.ForeColor = SystemColors.ButtonFace;
-            lblName.Location = new Point(98, 41);
+            lblName.Location = new Point(174, 104);
             lblName.Name = "lblName";
             lblName.Size = new Size(78, 18);
             lblName.TabIndex = 1;
@@ -75,7 +75,7 @@
             lblApellido.AutoSize = true;
             lblApellido.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblApellido.ForeColor = SystemColors.ButtonFace;
-            lblApellido.Location = new Point(98, 127);
+            lblApellido.Location = new Point(174, 166);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(72, 18);
             lblApellido.TabIndex = 2;
@@ -87,10 +87,10 @@
             txtNombre.BorderStyle = BorderStyle.FixedSingle;
             txtNombre.Cursor = Cursors.Hand;
             txtNombre.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(182, 41);
+            txtNombre.Location = new Point(258, 104);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(225, 27);
-            txtNombre.TabIndex = 3; 
+            txtNombre.TabIndex = 3;
             // 
             // txtApellido
             // 
@@ -98,24 +98,27 @@
             txtApellido.BorderStyle = BorderStyle.FixedSingle;
             txtApellido.Cursor = Cursors.Hand;
             txtApellido.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtApellido.Location = new Point(182, 125);
+            txtApellido.Location = new Point(258, 164);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(225, 27);
             txtApellido.TabIndex = 4;
             // 
             // label3
             // 
-            label3.Location = new Point(0, 0);
+            label3.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.LightSteelBlue;
+            label3.Location = new Point(28, 24);
             label3.Name = "label3";
-            label3.Size = new Size(100, 23);
+            label3.Size = new Size(286, 22);
             label3.TabIndex = 9;
+            label3.Text = "Ingrese los datos del postulante";
             // 
             // lblTipoD
             // 
             lblTipoD.AutoSize = true;
             lblTipoD.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblTipoD.ForeColor = SystemColors.ButtonFace;
-            lblTipoD.Location = new Point(7, 205);
+            lblTipoD.Location = new Point(83, 228);
             lblTipoD.Name = "lblTipoD";
             lblTipoD.Size = new Size(163, 18);
             lblTipoD.TabIndex = 7;
@@ -126,7 +129,7 @@
             lblDocumento.AutoSize = true;
             lblDocumento.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblDocumento.ForeColor = SystemColors.ButtonFace;
-            lblDocumento.Location = new Point(69, 273);
+            lblDocumento.Location = new Point(145, 285);
             lblDocumento.Name = "lblDocumento";
             lblDocumento.Size = new Size(101, 18);
             lblDocumento.TabIndex = 10;
@@ -136,8 +139,8 @@
             // 
             btnLimpiar.BackColor = Color.LightSteelBlue;
             btnLimpiar.Cursor = Cursors.Hand;
-            btnLimpiar.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLimpiar.Location = new Point(650, 156);
+            btnLimpiar.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLimpiar.Location = new Point(650, 202);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(119, 33);
             btnLimpiar.TabIndex = 11;
@@ -150,9 +153,9 @@
             btnVolver.BackColor = Color.LightSteelBlue;
             btnVolver.Cursor = Cursors.Hand;
             btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVolver.Location = new Point(634, 385);
+            btnVolver.Location = new Point(683, 402);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(145, 53);
+            btnVolver.Size = new Size(96, 35);
             btnVolver.TabIndex = 13;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = false;
@@ -165,7 +168,7 @@
             cboTipo.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cboTipo.FormattingEnabled = true;
             cboTipo.Items.AddRange(new object[] { "DNI", "PASAPORTE", "CUIL", "LIBRETA" });
-            cboTipo.Location = new Point(182, 202);
+            cboTipo.Location = new Point(258, 225);
             cboTipo.Name = "cboTipo";
             cboTipo.Size = new Size(225, 26);
             cboTipo.TabIndex = 14;
@@ -176,7 +179,7 @@
             txtDocumento.BorderStyle = BorderStyle.FixedSingle;
             txtDocumento.Cursor = Cursors.Hand;
             txtDocumento.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDocumento.Location = new Point(182, 273);
+            txtDocumento.Location = new Point(258, 285);
             txtDocumento.Name = "txtDocumento";
             txtDocumento.Size = new Size(225, 27);
             txtDocumento.TabIndex = 8;
@@ -184,9 +187,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.blob_removebg_preview;
-            pictureBox1.Location = new Point(634, 45);
+            pictureBox1.Location = new Point(650, 91);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(135, 83);
+            pictureBox1.Size = new Size(113, 93);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
@@ -196,22 +199,24 @@
             btnHacerSocio.BackColor = Color.DarkSeaGreen;
             btnHacerSocio.Cursor = Cursors.Hand;
             btnHacerSocio.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnHacerSocio.Location = new Point(422, 385);
+            btnHacerSocio.Location = new Point(12, 385);
             btnHacerSocio.Name = "btnHacerSocio";
-            btnHacerSocio.Size = new Size(163, 53);
+            btnHacerSocio.Size = new Size(163, 52);
             btnHacerSocio.TabIndex = 16;
-            btnHacerSocio.Text = "btnHacerSocio";
+            btnHacerSocio.Text = "Asociar";
             btnHacerSocio.UseVisualStyleBackColor = false;
             btnHacerSocio.Click += btnHacerSocio_Click;
             // 
             // btnBuscarPos
             // 
-            btnBuscarPos.Location = new Point(466, 205);
+            btnBuscarPos.BackColor = Color.LightSteelBlue;
+            btnBuscarPos.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscarPos.Location = new Point(650, 268);
             btnBuscarPos.Name = "btnBuscarPos";
-            btnBuscarPos.Size = new Size(101, 66);
+            btnBuscarPos.Size = new Size(119, 33);
             btnBuscarPos.TabIndex = 17;
-            btnBuscarPos.Text = "buscar";
-            btnBuscarPos.UseVisualStyleBackColor = true;
+            btnBuscarPos.Text = "Buscar";
+            btnBuscarPos.UseVisualStyleBackColor = false;
             btnBuscarPos.Click += btnBuscarPos_Click;
             // 
             // frmInscripcion

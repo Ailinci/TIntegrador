@@ -38,11 +38,11 @@
             // 
             btnInscribir.Cursor = Cursors.Hand;
             btnInscribir.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInscribir.Location = new Point(46, 74);
+            btnInscribir.Location = new Point(65, 74);
             btnInscribir.Name = "btnInscribir";
             btnInscribir.Size = new Size(210, 77);
             btnInscribir.TabIndex = 0;
-            btnInscribir.Text = "Inscribir postulante";
+            btnInscribir.Text = "Inscribir alumno";
             btnInscribir.UseVisualStyleBackColor = true;
             btnInscribir.Click += button1_Click;
             // 
@@ -51,9 +51,9 @@
             btnVolver.BackColor = Color.LightSteelBlue;
             btnVolver.Cursor = Cursors.Hand;
             btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVolver.Location = new Point(643, 385);
+            btnVolver.Location = new Point(684, 395);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(145, 53);
+            btnVolver.Size = new Size(104, 43);
             btnVolver.TabIndex = 1;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = false;
@@ -62,22 +62,22 @@
             // button1
             // 
             button1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(504, 78);
+            button1.Location = new Point(470, 74);
             button1.Name = "button1";
-            button1.Size = new Size(174, 68);
+            button1.Size = new Size(210, 77);
             button1.TabIndex = 2;
-            button1.Text = "Listar y asignar curso";
+            button1.Text = "Listar cursos";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
             // btnListarSocios
             // 
             btnListarSocios.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnListarSocios.Location = new Point(46, 202);
+            btnListarSocios.Location = new Point(65, 243);
             btnListarSocios.Name = "btnListarSocios";
             btnListarSocios.Size = new Size(210, 77);
             btnListarSocios.TabIndex = 3;
-            btnListarSocios.Text = "btnListarSocios";
+            btnListarSocios.Text = "Listar socios";
             btnListarSocios.UseVisualStyleBackColor = true;
             btnListarSocios.Click += btnListarSocios_Click;
             // 

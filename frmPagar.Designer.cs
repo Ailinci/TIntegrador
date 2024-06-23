@@ -29,34 +29,26 @@
         private void InitializeComponent()
         {
             txtNro = new TextBox();
-            btnComprobante = new Button();
             groupBox1 = new GroupBox();
             btnTarjeta = new RadioButton();
             optEfvo = new RadioButton();
-            btnVolver = new Button();
             cboTipo = new ComboBox();
             lblDocumento = new Label();
             txtDocumento = new TextBox();
             lblTipoD = new Label();
+            label1 = new Label();
             btnPagar = new Button();
+            btnVolver = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // txtNro
             // 
-            txtNro.Location = new Point(191, 87);
+            txtNro.BackColor = Color.LightSteelBlue;
+            txtNro.Location = new Point(255, 90);
             txtNro.Name = "txtNro";
             txtNro.Size = new Size(100, 23);
             txtNro.TabIndex = 0;
-            // 
-            // btnComprobante
-            // 
-            btnComprobante.Location = new Point(310, 301);
-            btnComprobante.Name = "btnComprobante";
-            btnComprobante.Size = new Size(75, 23);
-            btnComprobante.TabIndex = 1;
-            btnComprobante.Text = "btnComprobante";
-            btnComprobante.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -68,7 +60,7 @@
             groupBox1.Size = new Size(200, 100);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Método de pago";
             // 
             // btnTarjeta
             // 
@@ -76,10 +68,10 @@
             btnTarjeta.ForeColor = SystemColors.ButtonHighlight;
             btnTarjeta.Location = new Point(16, 54);
             btnTarjeta.Name = "btnTarjeta";
-            btnTarjeta.Size = new Size(94, 19);
+            btnTarjeta.Size = new Size(59, 19);
             btnTarjeta.TabIndex = 1;
             btnTarjeta.TabStop = true;
-            btnTarjeta.Text = "radioButton2";
+            btnTarjeta.Text = "Tarjeta";
             btnTarjeta.UseVisualStyleBackColor = true;
             // 
             // optEfvo
@@ -88,21 +80,11 @@
             optEfvo.ForeColor = SystemColors.ButtonFace;
             optEfvo.Location = new Point(16, 29);
             optEfvo.Name = "optEfvo";
-            optEfvo.Size = new Size(94, 19);
+            optEfvo.Size = new Size(67, 19);
             optEfvo.TabIndex = 0;
             optEfvo.TabStop = true;
-            optEfvo.Text = "radioButton1";
+            optEfvo.Text = "Efectivo";
             optEfvo.UseVisualStyleBackColor = true;
-            // 
-            // btnVolver
-            // 
-            btnVolver.Location = new Point(609, 342);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(75, 23);
-            btnVolver.TabIndex = 3;
-            btnVolver.Text = "button1";
-            btnVolver.UseVisualStyleBackColor = true;
-            btnVolver.Click += btnVolver_Click_1;
             // 
             // cboTipo
             // 
@@ -149,15 +131,41 @@
             lblTipoD.TabIndex = 15;
             lblTipoD.Text = "Tipo de documento";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(28, 90);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 18);
+            label1.TabIndex = 20;
+            label1.Text = "Número de postulante";
+            // 
             // btnPagar
             // 
-            btnPagar.Location = new Point(153, 301);
+            btnPagar.BackColor = Color.DarkSeaGreen;
+            btnPagar.Cursor = Cursors.Hand;
+            btnPagar.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPagar.Location = new Point(223, 300);
             btnPagar.Name = "btnPagar";
-            btnPagar.Size = new Size(75, 23);
-            btnPagar.TabIndex = 19;
-            btnPagar.Text = "btnPagar";
-            btnPagar.UseVisualStyleBackColor = true;
+            btnPagar.Size = new Size(163, 52);
+            btnPagar.TabIndex = 21;
+            btnPagar.Text = "Pagar";
+            btnPagar.UseVisualStyleBackColor = false;
             btnPagar.Click += btnPagar_Click;
+            // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = Color.LightSteelBlue;
+            btnVolver.Cursor = Cursors.Hand;
+            btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.Location = new Point(685, 399);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(103, 39);
+            btnVolver.TabIndex = 22;
+            btnVolver.Text = "VOLVER";
+            btnVolver.UseVisualStyleBackColor = false;
             // 
             // frmPagar
             // 
@@ -165,14 +173,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnVolver);
             Controls.Add(btnPagar);
+            Controls.Add(label1);
             Controls.Add(cboTipo);
             Controls.Add(lblDocumento);
             Controls.Add(txtDocumento);
             Controls.Add(lblTipoD);
-            Controls.Add(btnVolver);
             Controls.Add(groupBox1);
-            Controls.Add(btnComprobante);
             Controls.Add(txtNro);
             Name = "frmPagar";
             Text = "frmPagar";
@@ -185,16 +193,16 @@
         #endregion
 
         private TextBox txtNro;
-        private Button btnComprobante;
         private GroupBox groupBox1;
         private RadioButton radioButton2;
         private RadioButton optEfvo;
-        private Button btnVolver;
         private ComboBox cboTipo;
         private Label lblDocumento;
         private TextBox txtDocumento;
         private Label lblTipoD;
-        private Button btnPagar;
         private RadioButton btnTarjeta;
+        private Label label1;
+        private Button btnPagar;
+        private Button btnVolver;
     }
 }

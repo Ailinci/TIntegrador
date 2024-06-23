@@ -34,7 +34,6 @@ namespace TIntegrador
             conexionBindingSource = new BindingSource(components);
             dtgvCurso = new DataGridView();
             btnVolver = new Button();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgvCurso).BeginInit();
@@ -68,29 +67,19 @@ namespace TIntegrador
             btnVolver.BackColor = Color.LightSteelBlue;
             btnVolver.Cursor = Cursors.Hand;
             btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVolver.Location = new Point(787, 431);
+            btnVolver.Location = new Point(831, 440);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(145, 53);
+            btnVolver.Size = new Size(101, 44);
             btnVolver.TabIndex = 2;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(33, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(186, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Elija uno de los cursos para anotar";
             // 
             // frmAsignar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(944, 496);
-            Controls.Add(label1);
             Controls.Add(btnVolver);
             Controls.Add(dtgvCurso);
             Controls.Add(dataGridView1);
@@ -101,7 +90,6 @@ namespace TIntegrador
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtgvCurso).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -110,6 +98,5 @@ namespace TIntegrador
         private System.Windows.Forms.BindingSource conexionBindingSource;
         private System.Windows.Forms.DataGridView dtgvCurso;
         private Button btnVolver;
-        private Label label1;
     }
 }

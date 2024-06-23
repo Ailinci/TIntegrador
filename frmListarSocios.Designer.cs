@@ -37,10 +37,10 @@
             // 
             dtgvSocios.BackgroundColor = SystemColors.ButtonFace;
             dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvSocios.Location = new Point(2, 12);
+            dtgvSocios.Location = new Point(12, 12);
             dtgvSocios.Name = "dtgvSocios";
             dtgvSocios.RowTemplate.Height = 25;
-            dtgvSocios.Size = new Size(786, 273);
+            dtgvSocios.Size = new Size(776, 272);
             dtgvSocios.TabIndex = 2;
             // 
             // btnVolver
@@ -48,9 +48,9 @@
             btnVolver.BackColor = Color.LightSteelBlue;
             btnVolver.Cursor = Cursors.Hand;
             btnVolver.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVolver.Location = new Point(643, 385);
+            btnVolver.Location = new Point(685, 399);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(145, 53);
+            btnVolver.Size = new Size(103, 39);
             btnVolver.TabIndex = 14;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = false;
@@ -60,6 +60,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
             Controls.Add(btnVolver);
             Controls.Add(dtgvSocios);

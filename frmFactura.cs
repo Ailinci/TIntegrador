@@ -49,5 +49,10 @@ namespace TIntegrador
             principal.Show();
             this.Close();
         }
+
+        private void frmFactura_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

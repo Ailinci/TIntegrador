@@ -50,7 +50,7 @@ namespace TIntegrador
             {
                 Alumno = lines[0].Split(':')[1].Trim(),
                 Curso = "Costo por asociación",
-                Fecha = DateTime.Now, 
+                Fecha = DateTime.Now,
                 Monto = float.Parse(lines[2].Split(':')[1].Trim()),
                 FormaPago = btnTarjeta.Checked ? "Tarjeta" : "Efectivo"
             };
